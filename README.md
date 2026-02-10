@@ -1,60 +1,92 @@
-# REST API with MongoDB
+# API Documentation
 
-## Description
-This project is a RESTful API built with Node.js and Express, utilizing MongoDB as the database. It provides endpoints for basic CRUD operations.
+## Overview
+This is a REST API built with Node.js and MongoDB, designed to manage resources effectively. It allows users to create, read, update, and delete (CRUD) operations on various entities.
 
-## Installation Instructions
-1. Clone the repository:
-   ```
-   git clone https://github.com/dev-nidhi-codes/rest-api-mongodb.git
-   ```
-2. Navigate to the project directory:
-   ```
-   cd rest-api-mongodb
-   ```
-3. Install dependencies:
-   ```
-   npm install
-   ```
+## Base URL
+The base URL for the API is: `https://api.example.com`
 
-## API Endpoints
+## Endpoints
 
-### 1. Create User
-- **POST** `/api/users`
-- Body: 
-  ```json
-  {
-    "name": "John Doe",
-    "email": "john@example.com"
-  }
-  ```
+### 1. Users
 
-### 2. Get All Users
-- **GET** `/api/users`
+- **GET /users**  
+  Retrieve a list of users.
 
-### 3. Get User by ID
-- **GET** `/api/users/:id`
+- **GET /users/{id}**  
+  Retrieve a user by ID.
 
-### 4. Update User
-- **PUT** `/api/users/:id`
-- Body:
-  ```json
-  {
-    "name": "Jane Doe"
-  }
-  ```
+- **POST /users**  
+  Create a new user.
 
-### 5. Delete User
-- **DELETE** `/api/users/:id`
+- **PUT /users/{id}**  
+  Update a user by ID.
 
-## Testing Instructions
-To run tests for this API, follow these steps:
+- **DELETE /users/{id}**  
+  Delete a user by ID.
 
-1. Make sure you have installed all dependencies.
-2. Run the test command:
-   ```
-   npm test
-   ```
+### 2. Products
 
-## License
-This project is licensed under the MIT License.
+- **GET /products**  
+  Retrieve a list of products.
+
+- **GET /products/{id}**  
+  Retrieve a product by ID.
+
+- **POST /products**  
+  Create a new product.
+
+- **PUT /products/{id}**  
+  Update a product by ID.
+
+- **DELETE /products/{id}**  
+  Delete a product by ID.
+
+### 3. Orders
+
+- **GET /orders**  
+  Retrieve a list of orders.
+
+- **GET /orders/{id}**  
+  Retrieve an order by ID.
+
+- **POST /orders**  
+  Create a new order.
+
+- **PUT /orders/{id}**  
+  Update an order by ID.
+
+- **DELETE /orders/{id}**  
+  Delete an order by ID.
+
+## Testing Guide
+
+### Prerequisites
+- Node.js installed.
+- MongoDB installed and running.
+- Postman or any other API client for testing.
+
+### Steps to Test the API
+1. Clone the repository using `git clone https://github.com/dev-nidhi-codes/rest-api-mongodb.git`.
+2. Navigate to the project directory: `cd rest-api-mongodb`.
+3. Install the dependencies: `npm install`.
+4. Start the server: `npm start`.
+5. Open Postman (or your preferred API client).
+6. Send requests to the API endpoints as described above.
+
+### Example Test Cases
+1. **User Creation**:  
+   - Endpoint: `POST /users`  
+   - Body: `{ "name": "John Doe", "email": "john@example.com" }`
+   - Expected Response: `201 Created`
+
+2. **Product Retrieval**:  
+   - Endpoint: `GET /products/1`  
+   - Expected Response: `200 OK` and the product object.
+
+3. **Order Deletion**:  
+   - Endpoint: `DELETE /orders/1`  
+   - Expected Response: `204 No Content`
+
+## Conclusion
+Use this documentation to understand how to effectively work with the API and carry out testing procedures.
